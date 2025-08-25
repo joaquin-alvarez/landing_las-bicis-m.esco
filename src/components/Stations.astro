@@ -1,0 +1,141 @@
+---
+---
+
+<section class="stations-section" id="estaciones">
+	<div class="container">
+		<div class="section-header">
+			<h2>Estaciones por toda la ciudad</h2>
+			<p>Encuentra siempre una estación cerca. Tenemos puntos estratégicos en toda la ciudad.</p>
+		</div>
+		
+		<div class="stations-content">
+			<div class="map-container">
+				<div class="map-placeholder">
+					[MAPA INTERACTIVO]
+				</div>
+			</div>
+			
+			<div class="stations-stats">
+				<div class="stat-item">
+					<div class="stat-number">150+</div>
+					<div class="stat-label">Estaciones</div>
+				</div>
+				<div class="stat-item">
+					<div class="stat-number">2,500+</div>
+					<div class="stat-label">Bicicletas</div>
+				</div>
+				<div class="stat-item">
+					<div class="stat-number">24/7</div>
+					<div class="stat-label">Disponible</div>
+				</div>
+				<div class="stat-item">
+					<div class="stat-number">95%</div>
+					<div class="stat-label">Disponibilidad</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.stations-section {
+		background-color: var(--gray-100);
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.section-header h2 {
+		color: var(--primary-blue);
+		margin-bottom: 1rem;
+	}
+
+	.section-header p {
+		font-size: 1.1rem;
+		color: var(--gray-600);
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.stations-content {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 3rem;
+		align-items: center;
+	}
+
+	.map-container {
+		background: var(--white);
+		border-radius: var(--border-radius-lg);
+		padding: 2rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	.map-placeholder {
+		height: 400px;
+		background: linear-gradient(135deg, var(--light-blue) 0%, var(--gray-200) 100%);
+		border-radius: var(--border-radius);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 500;
+		color: var(--primary-blue);
+		font-size: 1.1rem;
+	}
+
+	.stations-stats {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
+	}
+
+	.stat-item {
+		text-align: center;
+		padding: 2rem;
+		background: var(--white);
+		border-radius: var(--border-radius-lg);
+		box-shadow: var(--shadow-sm);
+		transition: transform 0.3s ease;
+	}
+
+	.stat-item:hover {
+		transform: translateY(-4px);
+	}
+
+	.stat-number {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: var(--primary-blue);
+		font-family: var(--font-heading);
+		line-height: 1;
+		margin-bottom: 0.5rem;
+	}
+
+	.stat-label {
+		font-size: 1rem;
+		color: var(--gray-600);
+		font-weight: 500;
+	}
+
+	@media (min-width: 768px) {
+		.stations-content {
+			grid-template-columns: 2fr 1fr;
+		}
+
+		.stations-stats {
+			grid-template-columns: 1fr;
+		}
+
+		.map-placeholder {
+			height: 500px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.stations-stats {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+</style>

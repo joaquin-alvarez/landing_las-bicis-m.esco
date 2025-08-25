@@ -1,0 +1,164 @@
+---
+---
+
+<section class="how-it-works" id="como-funciona">
+	<div class="container">
+		<div class="section-header">
+			<h2>¿Cómo funciona?</h2>
+		</div>
+		<div class="cards-container">
+			<div class="card">
+				<div class="card-number">1</div>
+				<div class="card-content">
+					<h3>Descargá la app “ESCOBAR 360”</h3>
+					<p>En Google Play o App Store.</p>
+				</div>
+
+			</div>
+
+			<div class="card card-simple">
+				<div class="card-number">2</div>
+				<div class="card-content">
+					<h3>Escaneá el QR de la bici</h3>
+					<p>Encendé el bluetooth de tu
+						celular y escaneá el QR de
+						la bicicleta. También podés
+						ingresar la matrícula de la
+						bicicleta ubicada a los
+						costados de la misma.</p>
+				</div>
+				<div class="card-image">
+					<img src="/images/step2.png" alt="Mapa de estaciones">
+				</div>
+			</div>
+
+			<div class="card card-simple">
+				<div class="card-number">3</div>
+				<div class="card-content">
+					<h3>Quitá la traba U</h3>
+					<p>Esperá el “PIP” y quitá la traba U. ¡Ya casi estás listo para arrancar tu viaje!</p>
+				</div>
+				<div class="card-image">
+					<img src="/images/step3.png" alt="Mapa de estaciones">
+				</div>
+			</div>
+
+			<div class="card card-simple">
+				<div class="card-number">4</div>
+				<div class="card-content">
+					<h3>¡No viajes con la traba U en la mano!</h3>
+					<p>Una vez que la hayas sacado, encastrala en los círculos al costado, para viajar tranquilo y seguro.</p>
+				</div>
+				<div class="card-image">
+					<img src="/images/step4.png" alt="Mapa de estaciones">
+				</div>
+			</div>
+
+			<div class="card card-simple">
+				<div class="card-number">5</div>
+				<div class="card-content">
+					<h3>Final del viaje</h3>
+					<p>Una vez finalizado el trayecto, dirigite a la estación más cercana, apoyá la bicicleta en uno de los bicicleteros y bajá el pie de apoyo. Colocá la traba U vinculando la bicicleta al bicicletero.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.section-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.section-header h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		font-family: 'Syncopate', sans-serif;
+		color: var(--primary-blue);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.cards-container {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		flex-wrap: wrap;
+	}
+
+	.card {
+		color: var(--white);
+		background-color: var(--primary-blue);
+		border-radius: 30px;
+		padding: 2rem;
+		position: relative;
+		width: calc(33% - 1rem);
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+	}
+
+	.card-simple {
+		justify-content: center;
+	}
+
+	.card-number {
+		position: absolute;
+		top: -30px;
+		left: 30px;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background-color: var(--primary-blue);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--white);
+		font-family: 'Syncopate', sans-serif;
+	}
+
+	.card-content {
+		margin-top: 1.5rem;
+		z-index: 1;
+	}
+
+	.card-content h3 {1
+		color: white;
+		font-family: 'Syncopate', sans-serif;
+		font-weight: 700;
+		margin-bottom: 1rem;
+		font-size: 1.3rem;
+		text-transform: uppercase;
+	}
+
+	.card-content p {
+		color: white;
+		font-family: 'Poppins', sans-serif;
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+	.card-image {
+		margin-top: auto;
+		display: flex;
+		justify-content: center;
+	}
+
+	.card-image img {
+		max-width: 100%;
+		max-height: 200px;
+		object-fit: contain;
+		border-radius: 10px;
+	}
+
+	@media (max-width: 768px) {
+		.card {
+			width: 100%;
+		}
+	}
+</style>

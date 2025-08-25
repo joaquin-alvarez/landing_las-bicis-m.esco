@@ -1,0 +1,146 @@
+---
+---
+
+<section class="hero">
+	<div class="container">
+		<div class="hero-content">
+			<img src="/images/hero_bg-web-bicis.png" alt="Hero" class="hero-bg">
+			<div class="hero-card">
+				<div class="card-logo">
+					<img src="/vectors/bicis-logo.svg" alt="Las Bicis" class="bicis-logo">
+				</div>
+				<div class="card-text">
+					<p class="download-text">DESCARGÁ LA APP</p>
+					<p class="app-name">"ESCOBAR 360"</p>
+					<p class="small-text">En Google Play o App Store.</p>
+				</div>
+				<div class="app-buttons">
+					<a href="#" class="app-button">
+						<img src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png" alt="Google Play">
+					</a>
+					<a href="#" class="app-button">
+						<img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png" alt="App Store">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.container {
+		padding: 0;
+		margin: 0;
+		max-width: 100%;
+		position: relative;
+	}
+
+	.hero {
+		padding: 0;
+		position: relative;
+	}
+
+	.hero-content {
+		position: relative;
+		font-family: 'Syncopate', sans-serif;
+	}
+
+	.hero-bg {
+		height: 100%;
+		width: 100%;
+		object-fit: contain;
+	}
+
+	.hero-card {
+		position: absolute;
+		top: 20%;
+		left: 10%;
+		background-color: white;
+		padding: 2rem;
+		width: 330px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		border: .5rem solid;
+		border-image: linear-gradient(45deg, var(--primary-blue), var(--primary-blue), var(--primary-blue), transparent) 1;
+		border-radius: 30px;
+	}
+
+	.card-logo {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 1.75rem;
+	}
+
+	.bicis-logo {
+		width: 80%;
+		height: auto;
+		margin-bottom: 0.25rem;
+	}
+
+	.card-logo h2 {
+		color: var(--primary-blue);
+		font-weight: 700;
+		font-size: 1.3rem;
+		margin: 0;
+		letter-spacing: 0.05em;
+	}
+
+	.card-text {
+		margin-bottom: 1.75rem;
+		margin-top: .75rem;
+		width: 100%;
+	}
+
+	.download-text {
+		color: var(--primary-blue);
+		font-size: 1.2rem;
+		font-weight: 500;
+		margin: 0;
+		line-height: 1.2;
+	}
+
+	.app-name {
+		color: var(--primary-blue);
+		font-size: 1.2rem;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	.small-text {
+		font-family: 'Poppins', sans-serif;
+		font-size: 1em;
+		color: var(--gray-600);
+		margin-top: 0.25rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.app-buttons {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.25rem;
+		width: 100%;
+	}
+
+	.app-button {
+		display: block;
+		width: 100%;
+	}
+
+	.app-button img {
+		max-width: 240px;
+		height: auto;
+	}
+
+	@media (max-width: 768px) {
+		.hero-card {
+			left: 50%;
+			transform: translateX(-50%);
+			top: 15%;
+		}
+	}
+</style>

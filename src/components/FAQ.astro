@@ -1,0 +1,122 @@
+---
+---
+
+<section class="faq-section" id="faq">
+	<div class="container">
+		<div class="section-header">
+			<h2>Preguntas Frecuentes</h2>
+			<p>Todo lo que necesitas saber sobre Las Bicis</p>
+		</div>
+		
+		<div class="faq-grid">
+			<div class="faq-column">
+				<div class="faq-item">
+					<h3>¿Cómo me registro?</h3>
+					<p>Descarga la app, crea tu cuenta con email o redes sociales, agrega un método de pago y ¡listo!</p>
+				</div>
+				
+				<div class="faq-item">
+					<h3>¿Cuánto cuesta?</h3>
+					<p>Tenemos planes flexibles: $2.50 por viaje, $19.99 mensual, o $159.99 anual con descuento.</p>
+				</div>
+				
+				<div class="faq-item">
+					<h3>¿Qué pasa si la bici se daña?</h3>
+					<p>Reporta cualquier daño en la app inmediatamente. No te preocupes por el desgaste normal.</p>
+				</div>
+			</div>
+			
+			<div class="faq-column">
+				<div class="faq-item">
+					<h3>¿Puedo usar las bicis de noche?</h3>
+					<p>Sí, el servicio está disponible 24/7. Todas nuestras bicis tienen luces automáticas.</p>
+				</div>
+				
+				<div class="faq-item">
+					<h3>¿Qué hago si no hay estación cerca?</h3>
+					<p>Puedes dejar la bici en cualquier área segura y legal. Te guiaremos a través de la app.</p>
+				</div>
+				
+				<div class="faq-item">
+					<h3>¿Hay límite de tiempo?</h3>
+					<p>30 minutos incluidos. Después se cobra por tiempo adicional según tu plan.</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="faq-contact">
+			<p>¿No encontraste tu respuesta?</p>
+			<a href="#" class="btn btn-secondary">Contáctanos</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.faq-section {
+		background-color: var(--white);
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.section-header h2 {
+		color: var(--primary-blue);
+		margin-bottom: 1rem;
+	}
+
+	.section-header p {
+		font-size: 1.1rem;
+		color: var(--gray-600);
+	}
+
+	.faq-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+		margin-bottom: 4rem;
+	}
+
+	.faq-item {
+		background: var(--gray-100);
+		padding: 2rem;
+		border-radius: var(--border-radius-lg);
+		transition: all 0.3s ease;
+	}
+
+	.faq-item:hover {
+		background: var(--light-blue);
+		transform: translateY(-2px);
+	}
+
+	.faq-item h3 {
+		color: var(--primary-blue);
+		margin-bottom: 1rem;
+		font-size: 1.25rem;
+	}
+
+	.faq-item p {
+		color: var(--gray-600);
+		line-height: 1.6;
+	}
+
+	.faq-contact {
+		text-align: center;
+		padding-top: 2rem;
+		border-top: 1px solid var(--gray-200);
+	}
+
+	.faq-contact p {
+		margin-bottom: 1.5rem;
+		color: var(--gray-600);
+		font-size: 1.1rem;
+	}
+
+	@media (min-width: 768px) {
+		.faq-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 3rem;
+		}
+	}
+</style>
