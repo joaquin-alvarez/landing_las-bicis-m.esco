@@ -17,13 +17,11 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 			
 			<div class="app-showcase">
 				<div class="download-buttons">
-					<a href="#" class="download-button google-play">
-						<img src={`${import.meta.env.BASE_URL}/vectors/google-play.svg`} alt="Google Play">
-						<span>DISPONIBLE EN<br><strong>Google Play</strong></span>
+					<a href="#">
+						<img src={`${import.meta.env.BASE_URL}/vectors/google_play_badge.svg`} alt="Google Play" class="store-badge">
 					</a>
-					<a href="#" class="download-button app-store">
-						<img src={`${import.meta.env.BASE_URL}/vectors/app-store.svg`} alt="App Store">
-						<span>DISPONIBLE EN<br><strong>App Store</strong></span>
+					<a href="#">
+						<img src={`${import.meta.env.BASE_URL}/vectors/apple_badge.svg`} alt="App Store" class="store-badge">
 					</a>
 				</div>
 			</div>		
@@ -40,7 +38,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 				<img src={`${import.meta.env.BASE_URL}/images/bici_completa.webp`} alt="Las Bicis" class="bike-image">
 				
 				<!-- Hotspots para partes de la bicicleta -->
-				<div class="hotspot" style="--x: 55%; --y: 15%;">
+				<div class="hotspot" style="--x: 52.83%; --y: 11.49%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
 						<div class="popup-image-container">
@@ -53,7 +51,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 					</div>
 				</div>
 				
-				<div class="hotspot" style="--x: 65%; --y: 10%;">
+				<div class="hotspot" style="--x: 29.15%; --y: 27.94%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
 						<div class="popup-image-container">
@@ -66,7 +64,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 					</div>
 				</div>
 				
-				<div class="hotspot" style="--x: 75%; --y: 42%;">
+				<div class="hotspot" style="--x: 35.45%; --y: 10.64%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
 						<div class="popup-image-container">
@@ -79,7 +77,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 					</div>
 				</div>
 				
-				<div class="hotspot" style="--x: 50%; --y: 38%;">
+				<div class="hotspot" style="--x: 44.39%; --y: 52.38%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
 						<div class="popup-image-container">
@@ -92,7 +90,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 					</div>
 				</div>
 				
-				<div class="hotspot" style="--x: 20%; --y: 30%;">
+				<div class="hotspot" style="--x: 21.39%; --y: 69.27%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
 						<div class="popup-image-container">
@@ -105,7 +103,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 					</div>
 				</div>
 				
-				<div class="hotspot" style="--x: 15%; --y: 60%;">
+				<div class="hotspot" style="--x: 92.72%; --y: 41.82%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
 						<div class="popup-image-container">
@@ -118,7 +116,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 					</div>
 				</div>
 				
-				<div class="hotspot" style="--x: 30%; --y: 70%;">
+				<div class="hotspot" style="--x: 67.95%; --y: 63.44%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
 						<div class="popup-image-container">
@@ -131,7 +129,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 					</div>
 				</div>
 				
-				<div class="hotspot" style="--x: 25%; --y: 42%;">
+				<div class="hotspot" style="--x: 87.95%; --y: 57.74%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
 						<div class="popup-image-container">
@@ -144,7 +142,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 					</div>
 				</div>
 				
-				<div class="hotspot" style="--x: 40%; --y: 50%;">
+				<div class="hotspot" style="--x: 76.72%; --y: 51.71%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
 						<div class="popup-image-container">
@@ -157,7 +155,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 					</div>
 				</div>
 				
-				<div class="hotspot" style="--x: 60%; --y: 55%;">
+				<div class="hotspot" style="--x: 68.75%; --y: 41.34%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
 						<div class="popup-image-container">
@@ -240,6 +238,12 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 	
 	.about-header {
 		text-align: center;
+	}
+
+	.store-badge {
+		max-width: 240px;
+		width: 100%;
+		height: auto;
 	}
 
 	.download-text {
@@ -513,6 +517,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 	
 	.benefit-image {
 		width: 33vw;
+		max-width: 350px;
 		height: auto;
 		object-fit: cover;
 	}
@@ -589,7 +594,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 		}
 		
 		.bike-image {
-			max-width: 90%;
+			max-width: 100%;
 		}
 		
 		.benefits-section {
