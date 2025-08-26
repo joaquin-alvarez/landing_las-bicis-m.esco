@@ -4,65 +4,49 @@
 <section class="pricing-section" id="precios">
 	<div class="container">
 		<div class="section-header">
-			<h2>Planes que se adaptan a ti</h2>
-			<p>Elige el plan que mejor se ajuste a tu estilo de vida y necesidades de movilidad.</p>
+			<h2>¿Cuánto cuesta?</h2>
+			<p>Tenemos varios planes para que elijas el que mas te convenga. Registrate y seleccioná tu plan en la app.</p>
 		</div>
 		
-		<div class="pricing-grid">
-			<div class="pricing-card">
-				<div class="plan-header">
-					<h3>Por Viaje</h3>
-					<div class="price">
-						<span class="currency">$</span>
-						<span class="amount">2.50</span>
-						<span class="period">por viaje</span>
-					</div>
+		<div class="pricing-circles">
+			<!-- Plan por hora (blanco) -->
+			<div class="pricing-circle white">
+				<div class="price-content">
+					<div class="price">$225/hora</div>
+					<div class="description">Te lo recomendamos para un viaje ocasional.</div>
 				</div>
-				<ul class="plan-features">
-					<li>✓ Hasta 30 minutos</li>
-					<li>✓ Sin compromiso</li>
-					<li>✓ Perfecto para uso ocasional</li>
-					<li>✓ Paga solo cuando uses</li>
-				</ul>
-				<a href="#" class="btn btn-secondary plan-btn">Empezar ahora</a>
 			</div>
 
-			<div class="pricing-card featured">
-				<div class="popular-badge">Más Popular</div>
-				<div class="plan-header">
-					<h3>Mensual</h3>
-					<div class="price">
-						<span class="currency">$</span>
-						<span class="amount">19.99</span>
-						<span class="period">por mes</span>
-					</div>
+			<!-- Plan por día -->
+			<div class="pricing-circle blue">
+				<div class="price-content">
+					<div class="price">$450/día</div>
+					<div class="description">Ideal para moverte durante todo el día.</div>
 				</div>
-				<ul class="plan-features">
-					<li>✓ Viajes ilimitados de 30 min</li>
-					<li>✓ Extensiones a precio reducido</li>
-					<li>✓ Acceso prioritario</li>
-					<li>✓ Soporte 24/7</li>
-				</ul>
-				<a href="#" class="btn btn-primary plan-btn">Suscribirse</a>
 			</div>
 
-			<div class="pricing-card">
-				<div class="plan-header">
-					<h3>Anual</h3>
-					<div class="price">
-						<span class="currency">$</span>
-						<span class="amount">159.99</span>
-						<span class="period">por año</span>
-					</div>
-					<div class="savings">Ahorra $80 al año</div>
+			<!-- Plan mensual -->
+			<div class="pricing-circle blue">
+				<div class="price-content">
+					<div class="price">$6800/mes</div>
+					<div class="description">Animate y subite a la movilidad sustentable.</div>
 				</div>
-				<ul class="plan-features">
-					<li>✓ Todo lo del plan mensual</li>
-					<li>✓ 4 meses gratis</li>
-					<li>✓ Invitaciones para amigos</li>
-					<li>✓ Descuentos en comercios</li>
-				</ul>
-				<a href="#" class="btn btn-secondary plan-btn">Suscribirse</a>
+			</div>
+
+			<!-- Plan semestral -->
+			<div class="pricing-circle blue">
+				<div class="price-content">
+					<div class="price">$36100/<br>semestre</div>
+					<div class="description">Bajate del auto y viajá saludable.</div>
+				</div>
+			</div>
+
+			<!-- Plan anual -->
+			<div class="pricing-circle blue">
+				<div class="price-content">
+					<div class="price">$67600/<br>año</div>
+					<div class="description">Transformá la movilidad de Escobar.</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -71,6 +55,7 @@
 <style>
 	.pricing-section {
 		background-color: var(--white);
+		padding: 4rem 0;
 	}
 
 	.section-header {
@@ -85,123 +70,103 @@
 
 	.section-header p {
 		font-size: 1.1rem;
-		color: var(--gray-600);
+		color: var(--primary-blue);
 		max-width: 600px;
 		margin: 0 auto;
 	}
 
-	.pricing-grid {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 2rem;
-		max-width: 1000px;
+	.pricing-circles {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 5vw;
+		max-width: 1200px;
 		margin: 0 auto;
 	}
 
-	.pricing-card {
-		background: var(--white);
-		border: 2px solid var(--gray-200);
-		border-radius: var(--border-radius-lg);
-		padding: 2.5rem 2rem;
+	.pricing-circle {
+		width: 260px;
+		height: 260px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		text-align: center;
 		position: relative;
-		transition: all 0.3s ease;
+		padding: 1.5rem;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease;
 	}
 
-	.pricing-card:hover {
-		transform: translateY(-8px);
-		box-shadow: var(--shadow-lg);
+	.pricing-circle:hover {
+		transform: translateY(-10px);
 	}
 
-	.pricing-card.featured {
-		border-color: var(--primary-blue);
-		transform: scale(1.05);
+	/* Círculo blanco con borde azul */
+	.pricing-circle.white {
+		border: 4px solid transparent;
+		border-radius: 50%;
+		background-image: linear-gradient(white, white), linear-gradient(250deg, var(--primary-blue), var(--primary-blue), transparent);
+		background-origin: border-box;
+		background-clip: padding-box, border-box;
+		background-color: white;
 	}
 
-	.pricing-card.featured:hover {
-		transform: scale(1.05) translateY(-8px);
-	}
-
-	.popular-badge {
-		position: absolute;
-		top: -12px;
-		left: 50%;
-		transform: translateX(-50%);
-		background: var(--primary-blue);
-		color: var(--white);
-		padding: 0.5rem 1.5rem;
-		border-radius: 2rem;
-		font-size: 0.875rem;
-		font-weight: 600;
-	}
-
-	.plan-header {
-		margin-bottom: 2rem;
-	}
-
-	.plan-header h3 {
+	.pricing-circle.white .price {
 		color: var(--primary-blue);
-		margin-bottom: 1rem;
-		font-size: 1.5rem;
+	}
+
+	.pricing-circle.white .description {
+		color: var(--primary-blue);
+	}
+
+	/* Círculo azul */
+	.pricing-circle.blue {
+		background-color: var(--primary-blue);
+		color: white;
+	}
+
+	.price-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
 	}
 
 	.price {
-		display: flex;
-		align-items: baseline;
-		justify-content: center;
-		gap: 0.25rem;
-		margin-bottom: 0.5rem;
-	}
-
-	.currency {
-		font-size: 1.5rem;
-		color: var(--gray-600);
-		font-weight: 500;
-	}
-
-	.amount {
-		font-size: 3rem;
+		font-size: 1.8rem;
 		font-weight: 700;
-		color: var(--primary-blue);
+		margin-bottom: 1rem;
 		font-family: var(--font-heading);
 	}
 
-	.period {
-		font-size: 1rem;
-		color: var(--gray-600);
+	.pricing-circle.blue .price {
+		color: white;
 	}
 
-	.savings {
-		font-size: 0.875rem;
-		color: var(--accent-green);
-		font-weight: 600;
-		background: rgba(177, 214, 174, 0.2);
-		padding: 0.25rem 0.75rem;
-		border-radius: 1rem;
-		display: inline-block;
+	.description {
+		font-size: 0.9rem;
+		line-height: 1.3;
 	}
 
-	.plan-features {
-		list-style: none;
-		margin-bottom: 2.5rem;
-		text-align: left;
+	.pricing-circle.blue .description {
+		color: white;
 	}
 
-	.plan-features li {
-		padding: 0.5rem 0;
-		color: var(--gray-700);
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-	}
+	@media (max-width: 767px) {
+		.pricing-circle {
+			width: 180px;
+			height: 180px;
+		}
 
-	.plan-btn {
-		width: 100%;
-	}
+		.price {
+			font-size: 1.5rem;
+		}
 
-	@media (min-width: 768px) {
-		.pricing-grid {
-			grid-template-columns: repeat(3, 1fr);
+		.description {
+			font-size: 0.8rem;
 		}
 	}
 </style>
