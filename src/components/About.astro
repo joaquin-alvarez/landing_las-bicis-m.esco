@@ -29,6 +29,9 @@
 	</div>
 </section>
 <section class="bike-section">
+	<div class="ribbon-container">
+		<img src="/vectors/ribbon.svg" alt="" class="ribbon-image">
+	</div>
 	<div class="container">
 		<div class="bike-content">
 			<div class="bike-image-container">
@@ -208,11 +211,36 @@
 		font-size: 0.9rem;
 	}
 	
+	/* Estilos para el ribbon */
+	.ribbon-container {
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: -20px;
+		z-index: 10;
+	}
+
+	.ribbon-image {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.bike-section {
+		position: relative;
+		padding: 0;
+		overflow: visible;
+	}
+
 	.bike-image-container {
 		position: relative;
 		width: 100%;
-		max-width: 800px;
+		max-width: 1000px;
 		margin: 0 auto;
+		padding: 2rem 0;
 	}
 	
 	.bike-image {
@@ -231,12 +259,12 @@
 	}
 	
 	.hotspot-dot {
-		width: 20px;
-		height: 20px;
+		width: 30px;
+		height: 30px;
 		border-radius: 50%;
 		background-color: var(--accent-green);
-		border: 2px solid var(--white);
-		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+		border: 3px solid var(--white);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 		cursor: pointer;
 		transition: transform 0.2s, background-color 0.2s;
 		position: relative;
