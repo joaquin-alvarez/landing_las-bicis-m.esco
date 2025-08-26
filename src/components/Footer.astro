@@ -3,56 +3,34 @@
 
 <footer class="footer">
 	<div class="container">
-		<div class="footer-content">
-			<div class="footer-section">
-				<h4>Las Bicis</h4>
-				<p>Tu ciudad sobre ruedas. Movilidad sostenible y conectada.</p>
-				<div class="social-links">
-					<a href="#" aria-label="Facebook">[FB]</a>
-					<a href="#" aria-label="Twitter">[TW]</a>
-					<a href="#" aria-label="Instagram">[IG]</a>
-					<a href="#" aria-label="LinkedIn">[LI]</a>
-				</div>
+		<a href="tel:+5491168225555" style="text-decoration: none; color: inherit;" target="_blank">
+		<div class="customer-service">
+			<div class="phone-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+					<path d="M18 9a3 3 0 0 0-3-3"></path>
+					<path d="M21 9a6 6 0 0 0-6-6"></path>
+				</svg>
 			</div>
-			
-			<div class="footer-section">
-				<h4>Servicios</h4>
-				<ul>
-					<li><a href="#app">Descargar App</a></li>
-					<li><a href="#estaciones">Encontrar Estaciones</a></li>
-					<li><a href="#precios">Ver Precios</a></li>
-					<li><a href="#como-funciona">Cómo Funciona</a></li>
-				</ul>
-			</div>
-			
-			<div class="footer-section">
-				<h4>Soporte</h4>
-				<ul>
-					<li><a href="#faq">Preguntas Frecuentes</a></li>
-					<li><a href="#">Centro de Ayuda</a></li>
-					<li><a href="#">Contacto</a></li>
-					<li><a href="#">Reportar Problema</a></li>
-				</ul>
-			</div>
-			
-			<div class="footer-section">
-				<h4>Contacto</h4>
-				<div class="contact-info">
-					<p>📧 info@lasbicis.com</p>
-					<p>📞 +34 900 123 456</p>
-					<p>📍 Madrid, España</p>
-				</div>
+			<div class="service-info">
+				<h2>Atención al usuario 24/7</h2>
+				<h3>+54 9 11 6822-5555</h3>
 			</div>
 		</div>
+		</a>
 		
-		<div class="footer-bottom">
-			<div class="footer-legal">
-				<p>&copy; 2024 Las Bicis. Todos los derechos reservados.</p>
-				<div class="legal-links">
-					<a href="#">Términos de Uso</a>
-					<a href="#">Privacidad</a>
-					<a href="#">Cookies</a>
-				</div>
+		<div class="partners">
+			<div class="partner-logo">
+				<img src={`${import.meta.env.BASE_URL}/vectors/smoop-logo.svg`} alt="Smoop" class="smoop-logo">
+			</div>
+			<div class="partner-logo">
+				<img src={`${import.meta.env.BASE_URL}/vectors/escobar-logo.svg`} alt="Escobar Progresa" class="escobar-logo">
+			</div>
+			<div class="partner-logo">
+				<img src={`${import.meta.env.BASE_URL}/vectors/macro-logo.svg`} alt="Macro" class="macro-logo">
+			</div>
+			<div class="partner-logo">
+				<img src={`${import.meta.env.BASE_URL}/vectors/sostenible-logo.svg`} alt="Sostenible" class="sostenible-logo">
 			</div>
 		</div>
 	</div>
@@ -60,123 +38,87 @@
 
 <style>
 	.footer {
-		background-color: var(--gray-800);
-		color: var(--white);
-		padding: 3rem 0 1rem;
+		background-color: var(--primary-blue);
+		color: white;
+		padding: 3rem 0;
+		text-align: center;
 	}
 
-	.footer-content {
-		display: grid;
-		grid-template-columns: 1fr;
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	.customer-service {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 3rem;
+	}
+
+	.phone-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.phone-icon svg {
+		color: white;
+	}
+
+	.service-info h2 {
+		font-family: var(--font-heading);
+		font-size: 1.5rem;
+		margin: 0;
+		font-weight: 700;
+	}
+
+	.service-info h3 {
+		font-family: var(--font-heading);
+		font-size: 1.75rem;
+		margin: 0.25rem 0 0;
+		font-weight: 700;
+	}
+
+	.partners {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
 		gap: 2.5rem;
 		margin-bottom: 2rem;
 	}
 
-	.footer-section h4 {
-		color: var(--white);
-		margin-bottom: 1rem;
-		font-size: 1.1rem;
-	}
-
-	.footer-section p {
-		color: var(--gray-300);
-		line-height: 1.6;
-		margin-bottom: 1rem;
-	}
-
-	.footer-section ul {
-		list-style: none;
-	}
-
-	.footer-section ul li {
-		margin-bottom: 0.5rem;
-	}
-
-	.footer-section ul li a {
-		color: var(--gray-300);
-		transition: color 0.3s ease;
-	}
-
-	.footer-section ul li a:hover {
-		color: var(--white);
-	}
-
-	.social-links {
-		display: flex;
-		gap: 1rem;
-	}
-
-	.social-links a {
-		display: inline-block;
-		width: 40px;
+	.partner-logo img {
 		height: 40px;
-		background-color: var(--primary-blue);
-		color: var(--white);
-		text-align: center;
-		line-height: 40px;
-		border-radius: 50%;
-		transition: all 0.3s ease;
+		width: auto;
+		filter: brightness(0) invert(1);
 	}
 
-	.social-links a:hover {
-		background-color: var(--secondary-blue);
-		transform: translateY(-2px);
+	.contact-info {
+		margin-bottom: 1.5rem;
 	}
 
 	.contact-info p {
-		margin-bottom: 0.5rem;
-		color: var(--gray-300);
+		margin: 0.5rem 0;
+		font-family: var(--font-body);
+		font-size: 1rem;
 	}
 
-	.footer-bottom {
-		border-top: 1px solid var(--gray-600);
-		padding-top: 2rem;
-	}
-
-	.footer-legal {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		text-align: center;
-	}
-
-	.footer-legal p {
-		color: var(--gray-400);
-		font-size: 0.9rem;
-	}
-
-	.legal-links {
-		display: flex;
-		justify-content: center;
-		gap: 2rem;
-		flex-wrap: wrap;
-	}
-
-	.legal-links a {
-		color: var(--gray-400);
-		font-size: 0.9rem;
-		transition: color 0.3s ease;
-	}
-
-	.legal-links a:hover {
-		color: var(--white);
-	}
-
-	@media (min-width: 640px) {
-		.footer-content {
-			grid-template-columns: repeat(2, 1fr);
-		}
+	.footer-copyright p {
+		font-size: 0.875rem;
+		opacity: 0.8;
 	}
 
 	@media (min-width: 768px) {
-		.footer-content {
-			grid-template-columns: repeat(4, 1fr);
+		.partners {
+			gap: 4rem;
 		}
 
-		.footer-legal {
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: center;
+		.partner-logo img {
+			height: 50px;
 		}
 	}
 </style>

@@ -11,7 +11,7 @@
 					¿Quiénes pueden usar las bicicletas públicas?
 				</button>
 				<div class="faq-answer">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam egestas magna in magna fringilla, sed volutpat ex imperdiet. Donec fringilla nisi ut justo tincidunt, ut scelerisque diam bibendum.</p>
+					<p>Todas las personas mayores de 18 años con DNI argentino o residencia válida en el país, y también turistas extranjeros mayores de 18 años que se registren en la app.</p>
 				</div>
 			</div>
 
@@ -20,7 +20,7 @@
 					¿Cómo me registro para usar las bicis?
 				</button>
 				<div class="faq-answer">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam egestas magna in magna fringilla, sed volutpat ex imperdiet. Donec fringilla nisi ut justo tincidunt, ut scelerisque diam bibendum.</p>
+					<p>En el caso de personas con DNI argentino y residencia tenés que descargar la app "Escobar 360" y cargar tus datos personales (DNI, foto, domicilio, teléfono, mail y medio de pago). Una vez validado el registro, elegís un pase de uso para empezar a viajar. Si sos turista y/o turista extranjero descargate Las Bicis Escobar y cargá tus datos personales (DNI o pasaporte, foto, domicilio, teléfono, mail y medio de pago).</p>
 				</div>
 			</div>
 
@@ -29,7 +29,7 @@
 					¿Qué costo tiene el servicio?
 				</button>
 				<div class="faq-answer">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam egestas magna in magna fringilla, sed volutpat ex imperdiet. Donec fringilla nisi ut justo tincidunt, ut scelerisque diam bibendum.</p>
+					<p>El servicio funciona con pases de suscripción. Los valores y tipos de pases se publican en la app y en la web.</p>
 				</div>
 			</div>
 
@@ -38,7 +38,7 @@
 					¿En qué horarios puedo usar las bicis?
 				</button>
 				<div class="faq-answer">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam egestas magna in magna fringilla, sed volutpat ex imperdiet. Donec fringilla nisi ut justo tincidunt, ut scelerisque diam bibendum.</p>
+					<p>El sistema está disponible todos los días del año de 6 a 22 hs.</p>
 				</div>
 			</div>
 
@@ -47,7 +47,7 @@
 					¿Cuánto tiempo puedo usar la bici en cada viaje?
 				</button>
 				<div class="faq-answer">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam egestas magna in magna fringilla, sed volutpat ex imperdiet. Donec fringilla nisi ut justo tincidunt, ut scelerisque diam bibendum.</p>
+					<p>El tiempo máximo es de 60 minutos por viaje. Si te pasás, se aplican penalidades por exceso de uso.</p>
 				</div>
 			</div>
 
@@ -56,7 +56,7 @@
 					¿Qué pasa si no devuelvo la bici en el tiempo establecido?
 				</button>
 				<div class="faq-answer">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam egestas magna in magna fringilla, sed volutpat ex imperdiet. Donec fringilla nisi ut justo tincidunt, ut scelerisque diam bibendum.</p>
+					<p>A partir del minuto 65 se cobra una penalidad de $50 por cada minuto extra. Si no devolvés la bici después de 24 horas, se considera apropiación indebida y se aplican sanciones más graves, incluso legales.</p>
 				</div>
 			</div>
 
@@ -65,7 +65,7 @@
 					¿Dónde tengo que devolver la bici?
 				</button>
 				<div class="faq-answer">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam egestas magna in magna fringilla, sed volutpat ex imperdiet. Donec fringilla nisi ut justo tincidunt, ut scelerisque diam bibendum.</p>
+					<p>En cualquier estación del sistema que tenga anclajes libres. No podés dejar la bici en la calle ni en un lugar no habilitado.</p>
 				</div>
 			</div>
 
@@ -74,7 +74,7 @@
 					¿Puedo prestarle la bici a otra persona?
 				</button>
 				<div class="faq-answer">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam egestas magna in magna fringilla, sed volutpat ex imperdiet. Donec fringilla nisi ut justo tincidunt, ut scelerisque diam bibendum.</p>
+					<p>No. La cuenta y la bici son de uso personal e intransferible. Prestarla puede generar sanciones.</p>
 				</div>
 			</div>
 		</div>
@@ -91,12 +91,12 @@
 				question.classList.toggle('active');
 				
 				// Get the answer panel
-				const answer = question.nextElementSibling;
+				const answer = question.nextElementSibling as HTMLElement;
 				
 				// Toggle visibility of the answer
-				if (answer.style.maxHeight) {
-					answer.style.maxHeight = null;
-				} else {
+				if (answer && answer.style.maxHeight) {
+					answer.style.maxHeight = "";
+				} else if (answer) {
 					answer.style.maxHeight = answer.scrollHeight + "px";
 				}
 			});
@@ -136,11 +136,12 @@
 		display: block;
 		width: 100%;
 		padding: 1rem 1.5rem;
-		background-color: var(--primary-blue);
-		color: white;
-		font-size: 1.1rem;
+		background-color: white;
+		color: var(--primary-blue);
+		font-size: 1rem;
 		font-weight: 600;
-		border: none;
+		border: 2px solid var(--primary-blue);
+		font-family: var(--font-heading);
 		border-radius: 2rem;
 		cursor: pointer;
 		text-align: left;
@@ -149,7 +150,7 @@
 	}
 
 	.faq-question:hover {
-		background-color: #0039e3;
+		background-color: #f0f4ff;
 	}
 
 	/* Añadir flecha al botón */
@@ -160,8 +161,13 @@
 		top: 50%;
 		transform: translateY(-50%);
 		font-size: 1.5rem;
-		font-weight: 400;
+		font-weight: 600;
 		transition: transform 0.3s ease;
+	}
+
+	.faq-question.active {
+		background-color: var(--primary-blue);
+		color: white;
 	}
 
 	.faq-question.active::after {
@@ -178,7 +184,7 @@
 
 	.faq-answer p {
 		padding: 1rem 1.5rem;
-		color: var(--gray-600);
+		color: var(--primary-blue);
 		line-height: 1.5;
 		margin: 0;
 		font-size: 1rem;
@@ -191,21 +197,7 @@
 		
 		.faq-question {
 			padding: 1.25rem 2rem;
-			font-size: 1.2rem;
+			font-size: 1rem;
 		}
-	}
-
-	/* Estilos para el botón de contacto */
-	.faq-contact {
-		text-align: center;
-		padding-top: 2rem;
-		margin-top: 2rem;
-		border-top: 1px solid var(--gray-200);
-	}
-
-	.faq-contact p {
-		margin-bottom: 1.5rem;
-		color: var(--gray-600);
-		font-size: 1.1rem;
 	}
 </style>
