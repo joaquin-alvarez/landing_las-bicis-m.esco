@@ -1,4 +1,5 @@
 ---
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <script>
@@ -59,7 +60,7 @@
 								costados de la misma.</p>
 						</div>
 						<div class="card-image">
-							<img src="/images/step2.png" alt="Escanear QR">
+							<img src={`${import.meta.env.BASE_URL}/images/step2.png`} alt="Escanear QR">
 						</div>
 					</div>
 				</div>
@@ -73,7 +74,7 @@
 							<p>Esperá el "PIP" y quitá la traba U. ¡Ya casi estás listo para arrancar tu viaje!</p>
 						</div>
 						<div class="card-image">
-							<img src="/images/step3.png" alt="Quitar traba U">
+							<img src={`${import.meta.env.BASE_URL}/images/step3.png`} alt="Quitar traba U">
 						</div>
 					</div>
 				</div>
@@ -85,7 +86,7 @@
 							<p>Una vez que la hayas sacado, encastrala en los círculos al costado, para viajar tranquilo y seguro.</p>
 						</div>
 						<div class="card-image">
-							<img src="/images/step4.png" alt="Encastrar traba U">
+							<img src={`${import.meta.env.BASE_URL}/images/step4.png`} alt="Encastrar traba U">
 						</div>
 					</div>
 				</div>

@@ -1,13 +1,14 @@
 ---
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <section class="hero">
 	<div class="container">
 		<div class="hero-content">
-			<img src="/images/hero_bg-web-bicis.png" alt="Hero" class="hero-bg">
+			<img src={`${import.meta.env.BASE_URL}/images/hero_bg-web-bicis.png`} alt="Hero" class="hero-bg">
 			<div class="hero-card">
 				<div class="card-logo">
-					<img src="/vectors/bicis-logo.svg" alt="Las Bicis" class="bicis-logo">
+					<img src={`${import.meta.env.BASE_URL}/vectors/bicis-logo.svg`} alt="Las Bicis" class="bicis-logo">
 				</div>
 				<div class="card-text">
 					<p class="download-text">DESCARGÁ LA APP</p>

@@ -1,12 +1,13 @@
 ---
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <header class="header">
 	<div class="container">
 		<div class="header-content">
 			<div class="logos">
-				<img src="/vectors/escobar-logo.svg" alt="Escobar Progresa">
-				<img src="/vectors/macro-logo.svg" alt="Banco Macro">
+				<img src={`${import.meta.env.BASE_URL}/vectors/escobar-logo.svg`} alt="Escobar Progresa">
+				<img src={`${import.meta.env.BASE_URL}/vectors/macro-logo.svg`} alt="Banco Macro">
 			</div>
 			<nav class="nav">
 				<ul class="nav-list">

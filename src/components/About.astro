@@ -1,4 +1,6 @@
 ---
+const baseUrl = import.meta.env.BASE_URL;
+const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 ---
 
 <section class="about-section" id="las-bicis">
@@ -7,7 +9,7 @@
 		<div class="about-layout">
 			<div class="about-header">
 				<div class="logo-container">
-					<img src="/vectors/bicis-logo.svg" alt="Las Bicis" class="logo-image">
+					<img src={`${import.meta.env.BASE_URL}/vectors/bicis-logo.svg`} alt="Las Bicis" class="logo-image">
 					<p class="download-text">DESCARGÁ LA APP<br>"ESCOBAR 360"</p>
 					<p class="small-text">En Google Play o App Store.</p>
 				</div>
@@ -16,11 +18,11 @@
 			<div class="app-showcase">
 				<div class="download-buttons">
 					<a href="#" class="download-button google-play">
-						<img src="/vectors/google-play.svg" alt="Google Play">
+						<img src={`${import.meta.env.BASE_URL}/vectors/google-play.svg`} alt="Google Play">
 						<span>DISPONIBLE EN<br><strong>Google Play</strong></span>
 					</a>
 					<a href="#" class="download-button app-store">
-						<img src="/vectors/app-store.svg" alt="App Store">
+						<img src={`${import.meta.env.BASE_URL}/vectors/app-store.svg`} alt="App Store">
 						<span>DISPONIBLE EN<br><strong>App Store</strong></span>
 					</a>
 				</div>
@@ -30,18 +32,18 @@
 </section>
 <section class="bike-section">
 	<div class="ribbon-container">
-		<img src="/vectors/ribbon.svg" alt="" class="ribbon-image">
+		<img src={`${import.meta.env.BASE_URL}/vectors/ribbon.svg`} alt="" class="ribbon-image">
 	</div>
 	<div class="container" id="bike-showcase">
 		<div class="bike-content">
 			<div class="bike-image-container">
-				<img src="/images/bici_completa.webp" alt="Las Bicis" class="bike-image">
+				<img src={`${import.meta.env.BASE_URL}/images/bici_completa.webp`} alt="Las Bicis" class="bike-image">
 				
 				<!-- Hotspots para partes de la bicicleta -->
 				<div class="hotspot" style="--x: 20%; --y: 30%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
-						<img src="/images/bike-parts/wheels.webp" alt="Ruedas" class="popup-image">
+						<img src={`${import.meta.env.BASE_URL}/images/bike-parts/wheels.webp`} alt="Ruedas" class="popup-image">
 						<h4>Ruedas Premium</h4>
 						<p>Neumáticos resistentes con banda reflectante para mejor visibilidad nocturna.</p>
 					</div>
@@ -50,7 +52,7 @@
 				<div class="hotspot" style="--x: 50%; --y: 15%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
-						<img src="/images/bike-parts/handlebars.webp" alt="Manubrio" class="popup-image">
+						<img src={`${import.meta.env.BASE_URL}/images/bike-parts/handlebars.webp`} alt="Manubrio" class="popup-image">
 						<h4>Manubrio Ergonómico</h4>
 						<p>Diseñado para una postura cómoda en viajes largos con materiales antideslizantes.</p>
 					</div>
@@ -59,7 +61,7 @@
 				<div class="hotspot" style="--x: 75%; --y: 40%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
-						<img src="/images/bike-parts/seat.webp" alt="Asiento" class="popup-image">
+						<img src={`${import.meta.env.BASE_URL}/images/bike-parts/seat.webp`} alt="Asiento" class="popup-image">
 						<h4>Asiento Confortable</h4>
 						<p>Diseñado con tecnología de gel para absorber impactos y brindar máximo confort.</p>
 					</div>
@@ -80,10 +82,10 @@
 	</div>
 </section>
 
-<style>
+<style define:vars={{ aboutBgUrl }}>
 	.about-section {
 		background-color: var(--white);
-		background-image: url('/images/about_bg.webp');
+		background-image: var(--aboutBgUrl);
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
