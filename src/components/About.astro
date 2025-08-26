@@ -40,30 +40,93 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 				<img src={`${import.meta.env.BASE_URL}/images/bici_completa.webp`} alt="Las Bicis" class="bike-image">
 				
 				<!-- Hotspots para partes de la bicicleta -->
+				<div class="hotspot" style="--x: 55%; --y: 15%;">
+					<div class="hotspot-dot"></div>
+					<div class="hotspot-popup">
+						<img src={`${import.meta.env.BASE_URL}/images/hotspots/timbre.png`} alt="Timbre" class="popup-image">
+						<h4>TIMBRE</h4>
+						<p>Incorporado en el manubrio.</p>
+					</div>
+				</div>
+				
+				<div class="hotspot" style="--x: 65%; --y: 10%;">
+					<div class="hotspot-dot"></div>
+					<div class="hotspot-popup">
+						<img src={`${import.meta.env.BASE_URL}/images/hotspots/luces_frontales.png`} alt="Luces Frontales" class="popup-image">
+						<h4>LUCES FRONTALES</h4>
+						<p>Integradas en el canasto.</p>
+					</div>
+				</div>
+				
+				<div class="hotspot" style="--x: 75%; --y: 42%;">
+					<div class="hotspot-dot"></div>
+					<div class="hotspot-popup">
+						<img src={`${import.meta.env.BASE_URL}/images/hotspots/canasto.png`} alt="Canasto" class="popup-image">
+						<h4>CANASTO</h4>
+						<p>Con panel solar integrado.</p>
+					</div>
+				</div>
+				
+				<div class="hotspot" style="--x: 50%; --y: 38%;">
+					<div class="hotspot-dot"></div>
+					<div class="hotspot-popup">
+						<img src={`${import.meta.env.BASE_URL}/images/hotspots/cuadro_de_aluminio.png`} alt="Cuadro de Aluminio" class="popup-image">
+						<h4>CUADRO DE ALUMINIO</h4>
+						<p>Estructura ligera y duradera que proporciona estabilidad y resistencia a la corrosión.</p>
+					</div>
+				</div>
+				
 				<div class="hotspot" style="--x: 20%; --y: 30%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
-						<img src={`${import.meta.env.BASE_URL}/images/bike-parts/wheels.webp`} alt="Ruedas" class="popup-image">
-						<h4>Ruedas Premium</h4>
-						<p>Neumáticos resistentes con banda reflectante para mejor visibilidad nocturna.</p>
+						<img src={`${import.meta.env.BASE_URL}/images/hotspots/frenos_de_expansion.png`} alt="Frenos de Expansión" class="popup-image">
+						<h4>FRENOS DE EXPANSIÓN</h4>
+						<p>Delanteros y traseros.</p>
 					</div>
 				</div>
 				
-				<div class="hotspot" style="--x: 50%; --y: 15%;">
+				<div class="hotspot" style="--x: 15%; --y: 60%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
-						<img src={`${import.meta.env.BASE_URL}/images/bike-parts/handlebars.webp`} alt="Manubrio" class="popup-image">
-						<h4>Manubrio Ergonómico</h4>
-						<p>Diseñado para una postura cómoda en viajes largos con materiales antideslizantes.</p>
+						<img src={`${import.meta.env.BASE_URL}/images/hotspots/luces_traseras.png`} alt="Luces Traseras" class="popup-image">
+						<h4>LUCES TRASERAS</h4>
+						<p>Visibilidad a toda hora.</p>
 					</div>
 				</div>
 				
-				<div class="hotspot" style="--x: 75%; --y: 40%;">
+				<div class="hotspot" style="--x: 30%; --y: 70%;">
 					<div class="hotspot-dot"></div>
 					<div class="hotspot-popup">
-						<img src={`${import.meta.env.BASE_URL}/images/bike-parts/seat.webp`} alt="Asiento" class="popup-image">
-						<h4>Asiento Confortable</h4>
-						<p>Diseñado con tecnología de gel para absorber impactos y brindar máximo confort.</p>
+						<img src={`${import.meta.env.BASE_URL}/images/hotspots/soporte_doble.png`} alt="Soporte Doble" class="popup-image">
+						<h4>SOPORTE DOBLE</h4>
+						<p>Para mayor estabilidad.</p>
+					</div>
+				</div>
+				
+				<div class="hotspot" style="--x: 25%; --y: 42%;">
+					<div class="hotspot-dot"></div>
+					<div class="hotspot-popup">
+						<img src={`${import.meta.env.BASE_URL}/images/hotspots/tuercas_antivandalicas.png`} alt="Tuercas Antivandálicas" class="popup-image">
+						<h4>TUERCAS ANTIVANDÁLICAS</h4>
+						<p>Para asegurar la integridad del vehículo.</p>
+					</div>
+				</div>
+				
+				<div class="hotspot" style="--x: 40%; --y: 50%;">
+					<div class="hotspot-dot"></div>
+					<div class="hotspot-popup">
+						<img src={`${import.meta.env.BASE_URL}/images/hotspots/u_lock.png`} alt="Traba en U" class="popup-image">
+						<h4>TRABA EN U</h4>
+						<p>Sistema de bloqueo resistente con posibilidad de encastre en el cuadro durante el viaje.</p>
+					</div>
+				</div>
+				
+				<div class="hotspot" style="--x: 60%; --y: 55%;">
+					<div class="hotspot-dot"></div>
+					<div class="hotspot-popup">
+						<img src={`${import.meta.env.BASE_URL}/images/hotspots/caja_de_seguridad.png`} alt="Caja de Seguridad" class="popup-image">
+						<h4>CAJA DE SEGURIDAD</h4>
+						<p>Para candado Bluetooth.</p>
 					</div>
 				</div>
 			</div>
@@ -97,7 +160,9 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 	}
 
 	#bike-showcase {
-		padding: 4rem 0;
+		padding: 0;
+		margin-top: -50vh;
+		z-index: 2;
 	}
 
 	.gradient-overlay {
@@ -138,7 +203,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 	.small-text {
 		font-family: 'Poppins', sans-serif;
 		font-size: 1rem;
-		color: var(--gray-600);
+		color: var(--primary-blue);
 		margin-top: 0.25rem;
 		margin-bottom: 0.5rem;
 	}
@@ -220,13 +285,10 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 	/* Estilos para el ribbon */
 	.ribbon-container {
 		width: 100%;
-		position: relative;
-		overflow: hidden;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-bottom: -20px;
-		z-index: 10;
+		overflow: visible;
+		padding: 0px;
+		margin: 0px;
+		height: 70vh;
 	}
 
 	.ribbon-image {
@@ -246,7 +308,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 		width: 100%;
 		max-width: 1000px;
 		margin: 0 auto;
-		padding: 2rem 0;
+		padding: 1rem 0;
 	}
 	
 	.bike-image {
@@ -430,7 +492,7 @@ const aboutBgUrl = `url('${baseUrl}/images/about_bg.webp')`;
 		}
 		
 		.bike-image {
-			max-width: 70%;
+			max-width: 90%;
 		}
 		
 		.benefits-section {
