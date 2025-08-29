@@ -9,6 +9,11 @@ const baseUrl = import.meta.env.BASE_URL;
 				<img src={`${import.meta.env.BASE_URL}/vectors/escobar-logo.svg`} alt="Escobar Progresa">
 				<img src={`${import.meta.env.BASE_URL}/vectors/macro-logo.svg`} alt="Banco Macro">
 			</div>
+			<button class="mobile-menu-toggle" aria-label="Menú">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
 			<nav class="nav">
 				<ul class="nav-list">
 					<li><a href="#como-funciona">¿Cómo funciona?</a></li>
@@ -22,6 +27,16 @@ const baseUrl = import.meta.env.BASE_URL;
 		</div>
 	</div>
 </header>
+
+<div class="mobile-menu">
+	<ul class="mobile-nav-list">
+		<li><a href="#como-funciona">¿Cómo funciona?</a></li>
+		<li><a href="#estaciones">Estaciones</a></li>
+		<li><a href="#precios">Precios</a></li>
+		<li><a href="#las-bicis">Las Bicis</a></li>
+		<li><a href="#faq">FAQ</a></li>
+	</ul>
+</div>
 
 <style>
 	.header {
@@ -59,6 +74,82 @@ const baseUrl = import.meta.env.BASE_URL;
 		width: auto;
 	}
 
+	.mobile-menu-toggle {
+		display: block;
+		background: none;
+		border: none;
+		cursor: pointer;
+		width: 30px;
+		height: 24px;
+		position: relative;
+		z-index: 1010;
+	}
+
+	.mobile-menu-toggle span {
+		display: block;
+		height: 3px;
+		background-color: var(--white);
+		margin-bottom: 5px;
+		transition: all 0.3s ease;
+	}
+
+	.mobile-menu-toggle span:last-child {
+		margin-bottom: 0;
+	}
+
+	.mobile-menu-toggle.active span:nth-child(1) {
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	.mobile-menu-toggle.active span:nth-child(2) {
+		opacity: 0;
+	}
+
+	.mobile-menu-toggle.active span:nth-child(3) {
+		transform: translateY(-8px) rotate(-45deg);
+	}
+
+	.mobile-menu {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: var(--secondary-blue);
+		z-index: 1000;
+		transform: translateY(-100%);
+		transition: transform 0.3s ease;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.mobile-menu.active {
+		transform: translateY(0);
+	}
+
+	.mobile-nav-list {
+		list-style: none;
+		padding: 0;
+		text-align: center;
+	}
+
+	.mobile-nav-list li {
+		margin-bottom: 1.5rem;
+	}
+
+	.mobile-nav-list a {
+		color: var(--white);
+		font-size: 1.3rem;
+		font-weight: 500;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	.mobile-nav-list a:hover {
+		color: var(--accent-green);
+	}
+
 	.nav-list {
 		display: none;
 		list-style: none;
@@ -79,6 +170,10 @@ const baseUrl = import.meta.env.BASE_URL;
 		.nav-list {
 			display: flex;
 		}
+
+		.mobile-menu-toggle {
+			display: none;
+		}
 	}
 
 	/* Add space for fixed header */
@@ -86,3 +181,25 @@ const baseUrl = import.meta.env.BASE_URL;
 		padding-top: 12vh;
 	}
 </style>
+
+<script>
+	const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+	const mobileMenu = document.querySelector('.mobile-menu');
+	const mobileLinks = document.querySelectorAll('.mobile-nav-list a');
+
+	if (mobileMenuToggle && mobileMenu) {
+		mobileMenuToggle.addEventListener('click', () => {
+			mobileMenuToggle.classList.toggle('active');
+			mobileMenu.classList.toggle('active');
+			document.body.classList.toggle('menu-open');
+		});
+
+		mobileLinks.forEach(link => {
+			link.addEventListener('click', () => {
+				mobileMenuToggle.classList.remove('active');
+				mobileMenu.classList.remove('active');
+				document.body.classList.remove('menu-open');
+			});
+		});
+	}
+</script>

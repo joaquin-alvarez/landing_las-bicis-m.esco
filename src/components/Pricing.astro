@@ -82,6 +82,7 @@
 		gap: 5vw;
 		max-width: 1200px;
 		margin: 0 auto;
+		padding: 0 1rem;
 	}
 
 	.pricing-circle {
@@ -181,17 +182,61 @@
 
 	
 	@media (max-width: 767px) {
+		.pricing-section {
+			padding: 3rem 0;
+		}
+		
+		.section-header {
+			margin-bottom: 2.5rem;
+			padding: 0 1rem;
+		}
+		
+		.section-header h2 {
+			font-size: 1.8rem;
+		}
+		
+		.section-header p {
+			font-size: 1rem;
+		}
+		
+		.pricing-circles {
+			gap: 3rem 2rem;
+		}
+		
 		.pricing-circle {
-			width: 180px;
-			height: 180px;
+			width: 160px;
+			height: 160px;
 		}
 
 		.price {
-			font-size: 1.5rem;
+			font-size: 1.3rem;
+			margin-bottom: 0.5rem;
 		}
 
 		.description {
-			font-size: 0.8rem;
+			font-size: 0.75rem;
+		}
+	}
+	
+	@media (max-width: 400px) {
+		.pricing-circles {
+			gap: 2rem 1.5rem;
+		}
+		
+		.pricing-circle {
+			width: 140px;
+			height: 140px;
+			padding: 1rem;
+		}
+		
+		.price {
+			font-size: 1.1rem;
+			margin-bottom: 0.4rem;
+		}
+		
+		.description {
+			font-size: 0.7rem;
+			line-height: 1.2;
 		}
 	}
 </style>

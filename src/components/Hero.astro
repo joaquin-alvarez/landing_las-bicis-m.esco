@@ -61,6 +61,13 @@ const baseUrl = import.meta.env.BASE_URL;
 		max-width: 1200px;
 		z-index: 1;
 	}
+	
+	@media (max-width: 768px) {
+		.hero-ribbon {
+			width: 95%;
+			top: 5%;
+		}
+	}
 
 	.hero-card {
 		position: absolute;
@@ -79,6 +86,7 @@ const baseUrl = import.meta.env.BASE_URL;
 		background-origin: border-box;
 		background-clip: padding-box, border-box;
 		background-color: white;
+		transition: all 0.3s ease;
 	}
 
 	.card-logo {
@@ -151,10 +159,62 @@ const baseUrl = import.meta.env.BASE_URL;
 	}
 
 	@media (max-width: 768px) {
+		.hero-bg {
+			object-position: center;
+			height: auto;
+			min-height: 100vh;
+		}
+		
 		.hero-card {
 			left: 50%;
 			transform: translateX(-50%);
 			top: 15%;
+			width: 85%;
+			max-width: 330px;
+			padding: 1.5rem;
+		}
+		
+		.bicis-logo {
+			width: 70%;
+		}
+		
+		.download-text {
+			font-size: 1rem;
+		}
+		
+		.app-name {
+			font-size: 1rem;
+		}
+		
+		.small-text {
+			font-size: 0.9rem;
+		}
+		
+		.app-buttons {
+			gap: 0.5rem;
+		}
+		
+		.app-button img {
+			max-width: 200px;
+		}
+	}
+	
+	@media (max-width: 400px) {
+		.hero-card {
+			top: 12%;
+			padding: 1.25rem;
+		}
+		
+		.bicis-logo {
+			width: 65%;
+		}
+		
+		.card-logo {
+			margin-bottom: 1rem;
+		}
+		
+		.card-text {
+			margin-bottom: 1rem;
 		}
 	}
 </style>
