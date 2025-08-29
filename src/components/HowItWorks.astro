@@ -6,6 +6,31 @@ const baseUrl = import.meta.env.BASE_URL;
 	import Swiper from 'swiper';
 	import { Navigation, Pagination } from 'swiper/modules';
 	
+	// Define the updateCardStyles function outside to avoid scope issues
+	function updateCardStyles(swiperInstance) {
+		const slides = document.querySelectorAll('.swiper-slide');
+		const activeIndex = swiperInstance.activeIndex;
+		
+		// Reset all cards to secondary style (blue)
+		slides.forEach((slide) => {
+			const card = slide.querySelector('.card');
+			if (card) {
+				card.classList.remove('card-inverted', 'card-simple');
+				card.classList.add('card-simple');
+				card.classList.remove('card-animated');
+			}
+		});
+		
+		// Apply primary style (white) to the first visible card
+		if (slides[activeIndex]) {
+			const firstCard = slides[activeIndex].querySelector('.card');
+			if (firstCard) {
+				firstCard.classList.remove('card-simple');
+				firstCard.classList.add('card-inverted', 'card-animated');
+			}
+		}
+	}
+	
 	document.addEventListener('DOMContentLoaded', () => {
 		const swiper = new Swiper('.swiper-container', {
 			modules: [Navigation, Pagination],
@@ -25,6 +50,17 @@ const baseUrl = import.meta.env.BASE_URL;
 					slidesPerView: 2,
 					spaceBetween: 30
 				}
+			},
+			on: {
+				init: function() {
+					updateCardStyles(this);
+				},
+				slideChange: function() {
+					updateCardStyles(this);
+				},
+				breakpoint: function() {
+					updateCardStyles(this);
+				}
 			}
 		});
 	});
@@ -39,7 +75,7 @@ const baseUrl = import.meta.env.BASE_URL;
 			<div class="swiper-wrapper">
 				<!-- Slide 1-2 -->
 				<div class="swiper-slide">
-					<div class="card card-inverted">
+					<div class="card">
 						<div class="card-number">1</div>
 						<div class="card-content">
 							<h3>Descargá la app "ESCOBAR 360"</h3>
@@ -48,7 +84,7 @@ const baseUrl = import.meta.env.BASE_URL;
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<div class="card card-simple">
+					<div class="card">
 						<div class="card-number">2</div>
 						<div class="card-content">
 							<h3>Escaneá el QR de la bici</h3>
@@ -67,7 +103,7 @@ const baseUrl = import.meta.env.BASE_URL;
 
 				<!-- Slide 3-4 -->
 				<div class="swiper-slide">
-					<div class="card card-inverted">
+					<div class="card">
 						<div class="card-number">3</div>
 						<div class="card-content">
 							<h3>Quitá la traba U</h3>
@@ -79,7 +115,7 @@ const baseUrl = import.meta.env.BASE_URL;
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<div class="card card-simple">
+					<div class="card">
 						<div class="card-number">4</div>
 						<div class="card-content">
 							<h3>¡No viajes con la traba U en la mano!</h3>
@@ -93,7 +129,7 @@ const baseUrl = import.meta.env.BASE_URL;
 
 				<!-- Slide 5 -->
 				<div class="swiper-slide">
-					<div class="card card-inverted">
+					<div class="card">
 						<div class="card-number">5</div>
 						<div class="card-content">
 							<h3>Final del viaje</h3>
@@ -156,12 +192,18 @@ const baseUrl = import.meta.env.BASE_URL;
 		overflow: visible;
 		margin: 0 auto;
 		box-sizing: border-box;
+		transition: all 0.4s ease-in-out;
 	}
 	
 	.card-inverted {
 		background-color: white;
 		color: var(--primary-blue);
 		border: 2px solid var(--primary-blue);
+		transform: scale(1.05);
+	}
+	
+	.card-animated {
+		animation: xs-pulse 1s ease-in-out;
 	}
 
 	.card-simple {
@@ -310,6 +352,12 @@ const baseUrl = import.meta.env.BASE_URL;
 	.swiper-button-next:after, 
 	.swiper-button-prev:after {
 		font-size: 1.5rem;
+	}
+	
+	@keyframes xs-pulse {
+		0% { transform: scale(1); }
+		50% { transform: scale(1.08); }
+		100% { transform: scale(1.05); }
 	}
 </style>
 
