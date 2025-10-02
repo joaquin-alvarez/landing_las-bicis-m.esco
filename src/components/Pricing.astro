@@ -5,12 +5,12 @@
 	<div class="container">
 		<div class="section-header">
 			<h2>¿Cuánto cuesta?</h2>
-			<p>Tenemos varios planes para que elijas el que mas te convenga. Registrate y seleccioná tu plan en la app.</p>
+			<p>Tenemos varios planes para que elijas el que mas te convenga. Registrate y seleccioná tu plan en la app. <br>Te recordamos que <b>podés hacer un máximo de 4 viajes de 60 minutos cada uno por día</b>, de superar este límite <u>serás multado</u>.</p>
 		</div>
 		
 		<div class="pricing-circles">
 			<!-- Plan por hora (blanco) -->
-			<div class="pricing-circle white">
+			<div class="pricing-circle blue">
 				<div class="price-content">
 					<div class="price">$225/hora</div>
 					<div class="description">Te lo recomendamos para un viaje ocasional.</div>
@@ -21,7 +21,12 @@
 			<div class="pricing-circle blue">
 				<div class="price-content">
 					<div class="price">$450/día</div>
-					<div class="description">Ideal para moverte durante todo el día.</div>
+					<div class="description">Ideal para moverte durante todo el día.
+						<span class="small">*</span>
+					</div>
+				</div>
+				<div class="pricing-popup">
+					<p>Podés hacer hasta 4 viajes de 60 minutos por día</p>
 				</div>
 			</div>
 
@@ -29,7 +34,12 @@
 			<div class="pricing-circle blue">
 				<div class="price-content">
 					<div class="price">$6800/mes</div>
-					<div class="description">Animate y subite a la movilidad sustentable.</div>
+					<div class="description">Animate y subite a la movilidad sustentable.
+					<span class="small">*</span>
+					</div>
+				</div>
+				<div class="pricing-popup">
+					<p>Podés hacer hasta 4 viajes de 60 minutos por día</p>
 				</div>
 			</div>
 
@@ -37,7 +47,12 @@
 			<div class="pricing-circle blue">
 				<div class="price-content">
 					<div class="price">$36100/<br>semestre</div>
-					<div class="description">Bajate del auto y viajá saludable.</div>
+					<div class="description">Bajate del auto y viajá saludable.
+					<span class="small">*</span>
+					</div>
+				</div>
+				<div class="pricing-popup">
+					<p>Podés hacer hasta 4 viajes de 60 minutos por día</p>
 				</div>
 			</div>
 
@@ -45,7 +60,12 @@
 			<div class="pricing-circle blue">
 				<div class="price-content">
 					<div class="price">$67600/<br>año</div>
-					<div class="description">Transformá la movilidad de Escobar.</div>
+					<div class="description">Transformá la movilidad de Escobar.
+					<span class="small">*</span>
+				</div>
+				</div>
+				<div class="pricing-popup">
+					<p>Podés hacer hasta 4 viajes de 60 minutos por día</p>
 				</div>
 			</div>
 		</div>
@@ -179,6 +199,51 @@
 	.pricing-circle.blue .description {
 		color: white;
 	}
+	
+	/* Pricing popup styles */
+	.pricing-popup {
+		position: absolute;
+		bottom: calc(100% + 15px);
+		left: 50%;
+		transform: translateX(-50%) translateY(10px);
+		background-color: var(--primary-blue);
+		border-radius: 8px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		color: var(--white);
+		font-family: 'Syncopate', sans-serif;
+		padding: 15px;
+		width: 250px;
+		visibility: hidden;
+		opacity: 0;
+		transition: all 0.3s ease-in-out;
+		z-index: 20;
+		pointer-events: none;
+	}
+	
+	.pricing-circle.blue:hover .pricing-popup {
+		visibility: visible;
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
+	}
+	
+	/* Arrow for popup */
+	.pricing-popup::after {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		border-width: 8px;
+		border-style: solid;
+		border-color: var(--primary-blue) transparent transparent transparent;
+	}
+	
+	.pricing-popup p {
+		margin: 0;
+		font-size: 0.85rem;
+		line-height: 1.4;
+		text-align: center;
+	}
 
 	
 	@media (max-width: 767px) {
@@ -214,6 +279,15 @@
 		}
 
 		.description {
+			font-size: 0.75rem;
+		}
+		
+		.pricing-popup {
+			width: 200px;
+			padding: 12px;
+		}
+		
+		.pricing-popup p {
 			font-size: 0.75rem;
 		}
 	}
